@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:1em;
+    padding:10px;
+}
+header {
+    background-color: #E40000;
+    padding:10px;
+    width:100%;
+    max-width:1200px;
+    font-size:2em;
+    color:white;
+    display: flex;
+    align-items: center;
+    position: relative;
+    user-select: none;
+    height:100px;
+}
+.field {
+    max-width:1200px;
+    width:100%;
+    background-color: #F9F9F9;
+}
+main {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+div[class^=lesson] {
+    background-color: #F0F0F0;
+    width:100%;
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition-duration: .3s;
+    cursor:pointer;
+}
+div[class^=lesson] h2 {
+    font-size:1.5em;
+    line-height: 30px;
+    margin-bottom:20px;
+}
+div[class^=lesson]:nth-child(odd) {
+    background-color:#F9F9F9;
+}
+div[class^=lesson]:hover {
+    box-shadow:inset 0px 0px 20px #9D9D9D;
+}
+div[class^=lesson] .activities {
+    display: flex;
+    flex-wrap: wrap;
+}
+div[class^=lesson] .link {
+    padding:5px;
+    background-color: #E40000;
+    color:white;
+    margin-right:5px;
+    transition-duration:.3s;
+    display:block;
+}
+div[class^=lesson] .link:hover {
+    background-color:#C10000;
+}
+.japanese {
+    font-family: Meiryo;
+}
+b {
+    text-decoration: underline;
+}
+.field:not(.list) {
+    padding:10px;
+}
+.field:not(.list)  h2{
+    font-size:2em;
+    color:#272727;
+    margin:10px 0px;
+}
+.field:not(.list) .link {
+    color:#B2B2B2;
+    cursor: pointer;
+    width:300px;
+}
+.field:not(.list) .link:hover {
+    color: #828282;
+}
+.field:not(.list) .settings h3 {
+    font-size: 1.6em;
+    margin:10px 0px;
+}
+.field:not(.list) .mode {
+    display:block;
+    font-size:1.2em;
+    margin:10px 0px;
+}
+.field:not(.list) .settings {
+    border-top:1px solid #B2B2B2;
+}
+.field:not(.list) .settings .mode {
+    cursor: pointer;
+}
+.field:not(.list) .settings .mode input:disabled+span {
+    color:#DEDEDE;
+}
+.field:not(.list) .training {
+    border-top:1px solid #B2B2B2;
+}
+.field:not(.list) .show {
+    justify-content: center;
+    font-size: 2em;
+    min-height: 60px;
+    display:flex;
+    align-items: center;
+    width:calc(100% - 60px);
+}
+.field:not(.list) .answers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 5px;
+    margin-bottom:200px;
+}
+.field:not(.list) .training {
+    position: relative;
+}
+.field:not(.list) .answer {
+    cursor:pointer;
+    background-color: #E40000;
+    transition-duration: .3s;
+    color:white;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:1.2em;
+    text-align: center;
+}
+.field:not(.list) .answer:hover {
+    background-color: #C10000;
+}
+.field:not(.list) .next {
+    user-select: none;
+    width:60px;
+    height:60px;
+    position: absolute;
+    right:0px;
+    top:0px;
+    font-size:2em;
+    line-height: 60px;
+    text-align: center;
+    background-color: #B2B2B2;
+    color:white;
+    transition-duration: .3s;
+    cursor:pointer;
+}
+.field:not(.list) .next:hover {
+    color:#B2B2B2;
+    background-color:#F9F9F9;
+}
+@media all and (max-width: 1200px) {
+    .field:not(.list) .answers {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 5px;
+        grid-template-rows: 1fr 1fr;
+        grid-row-gap: 5px;
+    }
+}
+@media all and (max-width: 768px) {
+    .field:not(.list) .answers {
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-row-gap: 5px;
+        grid-template-columns: 100%;
+    }
+    header, .field:not(.list)  h2, .field:not(.list) .answer, .field:not(.list) .settings h3,
+    .field:not(.list) .show {
+        font-size: 1.2em;
+    }
+}
