@@ -36,6 +36,9 @@ window.onload = function() {
     lessons[5] = lesson5;
     lessons[6] = lesson6;
     lessons[7] = lesson7;
+    lessons[8] = lesson8;
+    lessons[9] = lesson9;
+    lessons[10] = lesson10;
 
     fields.forEach(function(elem) {
         elem.style.display = 'none';
